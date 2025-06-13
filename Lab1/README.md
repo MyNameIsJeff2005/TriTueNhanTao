@@ -46,7 +46,7 @@ Chúng có nhiều ứng dụng thực tế:
 - Đồ thị mẫu 1 (không trọng số) và đường đi DFS từ S đến G.
 - Đồ thị mẫu 5 (có trọng số) và đường đi DFS có trọng số từ S đến G.
 
-### 🔹 So sánh hiệu suất trên đồ thị lớn
+### So sánh hiệu suất trên đồ thị lớn
 
 - **BFS (Breadth-First Search)**  
 Thường **nhanh hơn và hiệu quả hơn** để tìm đường đi ngắn nhất trong **đồ thị không trọng số** hoặc khi cần duyệt theo từng lớp. Độ phức tạp thời gian: O(V + E) \quad \text{(V: số đỉnh, E: số cạnh)}. Khi mở rộng sang đồ thị có trọng số, BFS vẫn là lựa chọn tốt để tìm đường đi tối ưu.
