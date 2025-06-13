@@ -49,7 +49,7 @@ Chúng có nhiều ứng dụng thực tế:
 ### So sánh hiệu suất trên đồ thị lớn
 
 - **BFS (Breadth-First Search)**  
-Thường **nhanh hơn và hiệu quả hơn** để tìm đường đi ngắn nhất trong **đồ thị không trọng số** hoặc khi cần duyệt theo từng lớp. Độ phức tạp thời gian: O(V + E) \quad \text{(V: số đỉnh, E: số cạnh)}. Khi mở rộng sang đồ thị có trọng số, BFS vẫn là lựa chọn tốt để tìm đường đi tối ưu.
+Thường **nhanh hơn và hiệu quả hơn** để tìm đường đi ngắn nhất trong **đồ thị không trọng số** hoặc khi cần duyệt theo từng lớp. Khi mở rộng sang đồ thị có trọng số, BFS vẫn là lựa chọn tốt để tìm đường đi tối ưu.
 
 - **DFS (Depth-First Search)**  
-Phù hợp khi cần khám phá toàn bộ nhánh, tìm kiếm theo chiều sâu hoặc kiểm tra cấu trúc logic của đồ thị. Độ phức tạp thời gian: O(V + E). Tuy nhiên, DFS **không đảm bảo tìm đường đi ngắn nhất**, đặc biệt trong đồ thị có trọng số. Khi cần tìm tất cả các đường đi, DFS có thể tốn thời gian hơn đáng kể so với BFS hoặc Dijkstra.
+Phù hợp khi cần khám phá toàn bộ nhánh, tìm kiếm theo chiều sâu hoặc kiểm tra cấu trúc logic của đồ thị. Tuy nhiên, DFS **không đảm bảo tìm đường đi ngắn nhất**, đặc biệt trong đồ thị có trọng số. Khi cần tìm tất cả các đường đi, DFS có thể tốn thời gian hơn đáng kể so với BFS hoặc Dijkstra.
