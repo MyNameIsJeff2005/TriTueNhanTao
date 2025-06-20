@@ -40,32 +40,32 @@
 
 ## Giải thích từng hàm - Thực hành 7 (8-Queens)
 
-### import numpy as np, import random
+### *import numpy as np, import random*
 - Cũng như bài 4-Queens, nhưng lần này thêm thư viện `random` vào để hỗ trợ việc tạo ra số ngẫu nhiên
 
-### def is_valid_state(state, num_queens):
+### *def is_valid_state(state, num_queens):*
 - Hàm này kiểm tra xem trạng thái hiện tại có phải là một lời giải hợp lệ không.
 - Trả về `True` nếu số lượng quân hậu đã đặt đúng bằng số quân hậu cần thiết `num_queens`, tức là đã đặt đủ mỗi hàng một quân hậu.
 
-### def get_candidates(state, num_queens):
+### *def get_candidates(state, num_queens):*
 - Trả về tập các cột có thể đặt quân hậu tiếp theo ở hàng hiện tại.
 - Các cột đã bị tấn công bởi các quân hậu trước đó sẽ được loại bỏ dần yêu cầu:
     - Cùng cột (vertical)
     - Cùng đường chéo chính và phụ (diagonal)
 - Duyệt qua từng quân hậu đã đặt, loại bỏ các vị trí không hợp lệ ra khỏi bảng.
 
-### def search(state, solutions, num_queens):
+### *def search(state, solutions, num_queens):*
 - Là thuật toán quay lui `backtracking`.
 - Nếu trạng thái hiện tại hợp lệ (đủ quân hậu), thêm vào danh sách lời giải.
 - Nếu chưa đủ, thử đặt quân hậu vào từng cột hợp lệ tiếp theo, gọi đệ quy cho hàng tiếp theo.
 - Sau khi thử xong thì loại bỏ quân hậu vừa đặt `backtracking` để thử các khả năng khác.
 
-### def solve(num_queens):
+### *def solve(num_queens):*
 - Hàm tổng quát lại để giải bài toán **N-Queens**.
 - Khởi tạo trạng thái rỗng và danh sách lời giải, sau đó gọi hàm search để tìm tất cả lời giải.
 - Trả về danh sách các lời giải hợp lệ.
 
-### if __name__ == "__main__":
+### *if __name__ == "__main__":*
 - Là hầu như phần chạy chính phương trình.
 - Yêu cầu nhập số quân hậu (n) từ bàn phím (thường là 8 cho bài toán 8-Queens).
 - Gọi hàm `def solve()` để tìm lời giải.
