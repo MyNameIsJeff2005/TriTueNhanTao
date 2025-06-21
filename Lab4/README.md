@@ -1,7 +1,7 @@
 ## Ghi chú kết quả và phân tích sự khác biệt giữa 5 bài tập
 
 ### **Bài tập 1 & 2: Tối ưu hàm một biến với GA**
-- **Kết quả:** Khi chạy thuật toán di truyền cho hàm `h(x) = \sin(x) + \cos(x)`, nghiệm tìm được rất gần với nghiệm lý thuyết (`x \approx 0.7854`, `h(x) \approx 1.4142`). Quá trình hội tụ diễn ra khá nhanh nếu chọn tham số hợp lý.
+- **Kết quả:** Khi chạy thuật toán di truyền cho hàm `h(x) = \sin(x) + \cos(x)`, nghiệm tìm được rất gần với nghiệm lý thuyết (`h(x) \approx 0.7854`, `h(x) \approx 1.4142`). Quá trình hội tụ diễn ra khá nhanh nếu chọn tham số hợp lý.
 - **Phân tích:** Thuật toán di truyền rất phù hợp cho bài toán tối ưu một biến. Mình thấy quần thể ban đầu rất đa dạng, nhưng càng về sau thì các cá thể tốt dần chiếm ưu thế, dẫn đến nghiệm tối ưu gần đúng với giá trị thực tế.
 
 ### **Bài tập 3: Ảnh hưởng tham số GA**
