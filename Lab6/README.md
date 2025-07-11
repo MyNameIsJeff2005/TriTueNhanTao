@@ -45,9 +45,3 @@
 **Code:** Sửa hàm trực quan hóa để vẽ thêm hai feature map từ tầng conv2.
 **Kết quả:** Feature map tầng 1 thể hiện nét cơ bản, tầng 2 thể hiện đặc trưng phức tạp hơn, hình ảnh trừu tượng hơn.
 **Giải thích:** Các tầng sâu hơn trong CNN sẽ học đặc trưng tổng hợp từ các tầng trước, giúp mô hình nhận diện tốt hơn.
-
----
-
-## Ví dụ minh họa
-- Biểu đồ loss, độ chính xác, hình ảnh feature map được vẽ trực tiếp từ code.
-- Có thể bổ sung hình ảnh kết quả thực tế vào từng phần nếu
