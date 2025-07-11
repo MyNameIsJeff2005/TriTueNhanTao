@@ -1,4 +1,4 @@
-## Giải thích code từng câu cho README.md
+## Giải thích code từng câu
 ### **Câu 1: Thay đổi số lượng epoch**
 **Giải thích:**  
 Ở phần này, mình tăng số epoch từ 5 lên 10 trong vòng lặp huấn luyện. Việc này giúp mô hình có thêm thời gian để học từ dữ liệu, nên loss giảm đều hơn và độ chính xác trên tập test thường tăng lên. Tuy nhiên, nếu epoch quá lớn mà không điều chỉnh các tham số khác, mô hình có thể bị overfitting (học thuộc dữ liệu huấn luyện, kém tổng quát hóa).
