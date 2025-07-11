@@ -1,22 +1,53 @@
-## Giải thích code từng câu
-### **Câu 1: Thay đổi số lượng epoch**
-**Giải thích:**  
-Ở phần này, mình tăng số epoch từ 5 lên 10 trong vòng lặp huấn luyện. Việc này giúp mô hình có thêm thời gian để học từ dữ liệu, nên loss giảm đều hơn và độ chính xác trên tập test thường tăng lên. Tuy nhiên, nếu epoch quá lớn mà không điều chỉnh các tham số khác, mô hình có thể bị overfitting (học thuộc dữ liệu huấn luyện, kém tổng quát hóa).
+## Công nghệ sử dụng
+- **PyTorch**: Framework mạnh mẽ cho học sâu, hỗ trợ GPU, dễ xây dựng mạng nơ-ron.
+- **Torchvision**: Thư viện tải và xử lý dữ liệu ảnh (MNIST).
+- **Matplotlib, NumPy**: Trực quan hóa kết quả, xử lý dữ liệu.
 
-### **Câu 2: Thêm một tầng tích chập**
-**Giải thích:**  
-Mình thêm một tầng tích chập thứ ba (`conv3`) vào mô hình. Sau mỗi tầng tích chập đều có ReLU và pooling. Việc thêm tầng này giúp mô hình học được các đặc trưng phức tạp hơn trong ảnh, từ đó có thể tăng độ chính xác. Tuy nhiên, nếu mô hình quá phức tạp mà dữ liệu không đủ lớn, có thể dẫn đến overfitting.
+## Thuật toán sử dụng
+- **Convolutional Neural Network (CNN)**: Mạng nơ-ron tích chập cho nhận diện ảnh số viết tay.
+- **Loss Function**: CrossEntropyLoss (phù hợp phân loại nhiều lớp).
+- **Optimizer**: SGD (Stochastic Gradient Descent) với momentum.
 
-### **Câu 3: Thay đổi learning rate**
-**Giải thích:**  
-Ở câu này, mình thử hai giá trị learning rate khác nhau: 0.001 và 0.1.  
-- Với learning rate nhỏ (0.001), mô hình học chậm, loss giảm từ từ nhưng ổn định, ít bị dao động.
-- Với learning rate lớn (0.1), mô hình học rất nhanh nhưng loss có thể dao động mạnh, thậm chí không hội tụ nếu quá lớn.
-Việc chọn learning rate phù hợp là rất quan trọng để mô hình học hiệu quả.
+## Giải thích cách hoạt động
+- **Tầng tích chập (Convolution)**: Tìm đặc trưng nhỏ trong ảnh (cạnh, góc).
+- **Hàm kích hoạt (ReLU)**: Loại bỏ giá trị âm, giữ nét chính.
+- **Pooling**: Giảm kích thước, giữ thông tin quan trọng.
+- **Fully Connected**: Ghép đặc trưng, phân loại ảnh.
+- **Huấn luyện**: Lặp qua nhiều epoch để tối ưu trọng số.
+- **Learning rate**: Điều chỉnh tốc độ học của mô hình.
 
-### **Câu 4: Vẽ thêm feature map từ tầng conv2**
-**Giải thích:**  
-Mình sửa hàm trực quan hóa để vẽ thêm hai feature map từ tầng tích chập thứ hai (`conv2`).  
-- Feature map tầng 1 (conv1) thường thể hiện các nét cơ bản như cạnh, góc.
-- Feature map tầng 2 (conv2) thể hiện các đặc trưng phức tạp hơn, là sự kết hợp của nhiều nét từ tầng trước, nên hình ảnh trừu tượng hơn.
-Việc này giúp mình hiểu rõ hơn về cách CNN học và trích xuất đặc trưng qua từng
+---
+
+## Câu 1: Thay đổi số lượng epoch
+**Code:** Tăng số epoch từ 5 lên 10 trong vòng lặp huấn luyện.
+**Kết quả:** Loss giảm đều hơn, độ chính xác trên tập test thường tăng. Nếu epoch quá lớn có thể gây overfitting.
+**Giải thích:** Epoch tăng giúp mô hình học lâu hơn, nhưng cần cân nhắc để tránh học thuộc dữ liệu huấn luyện.
+
+---
+
+## Câu 2: Thêm một tầng tích chập
+**Code:** Thêm tầng tích chập thứ ba (`conv3`) vào mô hình, sửa lại tầng fully connected cho phù hợp.
+**Kết quả:** Độ chính xác trên tập test thường tăng, mô hình học được đặc trưng phức tạp hơn.
+**Giải thích:** Thêm tầng giúp mô hình mạnh hơn, nhưng nếu quá phức tạp mà dữ liệu không đủ lớn có thể gây overfitting.
+
+---
+
+## Câu 3: Thay đổi learning rate
+**Code:** Thử với hai giá trị learning rate: 0.001 và 0.1.
+**Kết quả:**  
+- Learning rate nhỏ (0.001): mô hình học chậm, loss giảm từ từ, ổn định.
+- Learning rate lớn (0.1): mô hình học nhanh nhưng loss dao động mạnh, có thể không hội tụ.
+**Giải thích:** Learning rate ảnh hưởng trực tiếp đến tốc độ và độ ổn định của quá trình học.
+
+---
+
+## Câu 4: Vẽ thêm feature map từ tầng conv2
+**Code:** Sửa hàm trực quan hóa để vẽ thêm hai feature map từ tầng conv2.
+**Kết quả:** Feature map tầng 1 thể hiện nét cơ bản, tầng 2 thể hiện đặc trưng phức tạp hơn, hình ảnh trừu tượng hơn.
+**Giải thích:** Các tầng sâu hơn trong CNN sẽ học đặc trưng tổng hợp từ các tầng trước, giúp mô hình nhận diện tốt hơn.
+
+---
+
+## Ví dụ minh họa
+- Biểu đồ loss, độ chính xác, hình ảnh feature map được vẽ trực tiếp từ code.
+- Có thể bổ sung hình ảnh kết quả thực tế vào từng phần nếu
